@@ -1,5 +1,5 @@
 {
-  "name": "slackify-markdown",
+  "name": "@apono-io/slackify-markdown",
   "version": "5.0.0",
   "description": "Convert markdown into Slack-specific markdown",
   "license": "MIT",
@@ -19,9 +19,12 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jsarafajr/slackify-markdown.git"
+    "url": "git://github.com/apono-io/slackify-markdown.git"
   },
   "keywords": [
     "slack",

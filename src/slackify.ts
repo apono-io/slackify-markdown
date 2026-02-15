@@ -16,7 +16,7 @@ import type {
   Blockquote,
 } from 'mdast';
 
-import { wrap, isURL, isPotentiallyEncoded } from './utils.js';
+import { wrap } from './utils.js';
 import type { DefinitionsMap } from './plugins.js';
 
 // fixes slack in-word formatting (e.g. hel*l*o)

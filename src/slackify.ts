@@ -153,10 +153,8 @@ const createHandlers = (
   ): string => {
     const exit = state.enter('link');
     const text = state.containerPhrasing(node, info) || node.title;
-    const url = isPotentiallyEncoded(node.url) ? node.url : encodeURI(node.url);
+    const url = node.url;
     exit();
-
-    if (!isURL(url)) return text || url;
 
     return text ? `<${url}|${text}>` : `<${url}>`;
   },
@@ -174,7 +172,7 @@ const createHandlers = (
       (definition ? definition.title : null);
     exit();
 
-    if (!definition || !isURL(definition.url)) return text ?? '';
+    if (!definition) return text ?? '';
 
     return text ? `<${definition.url}|${text}>` : `<${definition.url}>`;
   },
@@ -184,8 +182,6 @@ const createHandlers = (
     const text = node.alt || node.title;
     const url = encodeURI(node.url);
     exit();
-
-    if (!isURL(url)) return text || url;
 
     return text ? `<${url}|${text}>` : `<${url}>`;
   },
@@ -200,7 +196,7 @@ const createHandlers = (
     const text = node.alt || (definition ? definition.title : null);
     exit();
 
-    if (!definition || !isURL(definition.url)) return text ?? '';
+    if (!definition) return text ?? '';
 
     return text ? `<${definition.url}|${text}>` : `<${definition.url}>`;
   },
